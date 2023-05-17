@@ -1,0 +1,20 @@
+{
+  "name": "jms2clash",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "itty-router": "^3.0.12",
+    "parse-path": "^7.0.0",
+    "yaml": "^2.2.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230511.0",
+    "@types/parse-path": "^7.0.0",
+    "typescript": "^5.0.4",
+    "wrangler": "3.0.0"
+  }
+}

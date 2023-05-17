@@ -1,0 +1,8 @@
+name = "jms2clash"
+main = "src/index.ts"
+compatibility_date = "2023-05-16"
+usage_model = "bundled"
+env = { }
+
+[triggers]
+crons = [ ]
