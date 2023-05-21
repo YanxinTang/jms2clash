@@ -3,7 +3,7 @@ import {
   downloadJmsSubscriptionFile,
   splitJmsSubscriptionFile,
 } from "../utils";
-import transfer from "../lib/transfer";
+import converter from "../lib/converter";
 import { IRequest } from "itty-router";
 
 export default async function (request: IRequest) {
@@ -13,7 +13,7 @@ export default async function (request: IRequest) {
   try {
     const protocols = splitJmsSubscriptionFile(file);
 
-    const proxies = protocols.map((p) => transfer.parse(p)).filter(Boolean);
+    const proxies = protocols.map((p) => converter.parse(p)).filter(Boolean);
     const respData = { proxies };
 
     return new Response(stringify(respData));

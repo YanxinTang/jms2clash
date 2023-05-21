@@ -7,6 +7,7 @@ import * as controllers from "../controller";
 const router = Router();
 
 router
+  .get("/raw", auth, search, controllers.raw)
   .get("/fallback.yaml", auth, search, controllers.fallback)
   .get("/url-test.yaml", auth, search, controllers.urlTest)
   .all("*", () => new Response("404, not found!", { status: 404 }));

@@ -4,7 +4,7 @@ import {
   getName,
   splitJmsSubscriptionFile,
 } from "../utils";
-import transfer from "../lib/transfer";
+import converter from "../lib/converter";
 import { IRequest } from "itty-router";
 
 const FALLBACK_SERVERS_ORDER = [
@@ -22,7 +22,7 @@ export default async function (request: IRequest) {
 
   try {
     const protocols = splitJmsSubscriptionFile(file);
-    const proxies = protocols.map((p) => transfer.parse(p)).filter(Boolean);
+    const proxies = protocols.map((p) => converter.parse(p)).filter(Boolean);
 
     const fallbackProxies = [];
     for (const proxy of proxies) {

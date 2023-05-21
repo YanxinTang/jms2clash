@@ -3,16 +3,16 @@ import type { ClashSS } from './handlers/ss';
 import vmess from './handlers/vmess';
 import type { ClashVmess } from './handlers/vmess';
 
-type TransferHandler = (str: string) => ClashSS | ClashVmess
+type ConverterHandler = (str: string) => ClashSS | ClashVmess
 
-export class Transfer {
-  private protocolHandlerMap: Map<string, TransferHandler>
+export class Converter {
+  private protocolHandlerMap: Map<string, ConverterHandler>
 
   constructor() {
     this.protocolHandlerMap = new Map();
   }
 
-  register(protocol: string, handler: TransferHandler) {
+  register(protocol: string, handler: ConverterHandler) {
     this.protocolHandlerMap.set(protocol, handler);
   }
 
@@ -26,9 +26,9 @@ export class Transfer {
   }
 }
 
-const transfer = new Transfer();
+const converter = new Converter();
 
-transfer.register('ss', ss);
-transfer.register('vmess', vmess);
+converter.register('ss', ss);
+converter.register('vmess', vmess);
 
-export default transfer;
+export default converter;
