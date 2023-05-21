@@ -17,12 +17,17 @@ pnpm exec wrangler secret put BASIC_PASS
 pnpm exec wrangler deploy
 ```
 
-### Fallback URL
+### Raw URL
+
+- No amend, just original response
+- URL: `https://<BASIC_USER>:<BASIC_PASS>@<YOUR_SERVER_NAME>/raw?service=xxxxxx&id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx`
+
+### `fallback` URL
 
 - Proxies is sorted by `FALLBACK_SERVERS_ORDER`
 - URL: `https://<BASIC_USER>:<BASIC_PASS>@<YOUR_SERVER_NAME>/fallback.yaml?service=xxxxxx&id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx`
 
-### Select URL
+### `url-test` URL
 
 - Proxies is jms's order
 - URL: `https://<BASIC_USER>:<BASIC_PASS>@<YOUR_SERVER_NAME>/select.yaml?service=xxxxxx&id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx`
