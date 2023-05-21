@@ -8,7 +8,7 @@ const router = Router();
 
 router
   .get("/fallback.yaml", auth, search, controllers.fallback)
-  .get("/select.yaml", auth, search, controllers.select)
+  .get("/url-test.yaml", auth, search, controllers.urlTest)
   .all("*", () => new Response("404, not found!", { status: 404 }));
 
 export default router;

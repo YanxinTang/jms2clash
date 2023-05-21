@@ -1,7 +1,7 @@
 import fallback from './fallback';
-import select from './select';
+import urlTest from './url-test';
 
 export {
   fallback,
-  select
+  urlTest
 }
